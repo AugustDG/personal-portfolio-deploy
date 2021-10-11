@@ -14,16 +14,16 @@
 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="AR app highlighting Montréal's historical and cultural sites! - Unity">
-        <meta name="keywords" content="Augusto Mota Pinheiro, portfolio, projects, unity, ar app, ar, dawson college, kngfu">
+        <meta name="description" content="Home server for all my storage, backup and Minecraft needs! - Docker">
+        <meta name="keywords" content="Augusto Mota Pinheiro, portfolio, projects, linux, ubuntu, docker, ansible-nas, portainer, filerun">
         <meta name="author" content="Augusto Mota Pinheiro">
-        <title>Augusto Pinheiro - AR Cité</title>
+        <title>Augusto Pinheiro - Home Server</title>
         <link rel="icon" type="image/webp" href="../img/icons/site-icon.webp">
         <link rel="stylesheet" href="../css/final.css">
 
     </head>
 
-    <body id="ar-cite" class="font-mono">
+    <body id="home-server" class="font-mono">
         <!-- content wrapper  -->
         <div>
             <!-- modal section -->
@@ -36,7 +36,7 @@
                 <!-- title -->
                 <div class="relative flex-auto ml-24 lg:ml-12 group">
                     <h1 class="absolute text-lg font-bold -bottom-3.5 md:text-base z-10 transition-colors group-hover:text-transparent pointer-events-none cursor-pointer" id="title-overlay">
-                        ar cite
+                        home server
                     </h1>
                     <div class="absolute block w-full h-6 transition-all duration-200 bg-black-500 -bottom-3 z-5 group-hover:w-0" id="title-overlay">
                     </div>
@@ -123,82 +123,49 @@
             </header>
             <main>
                 <!-- main section -->
-                <div class="bg-pink-500 project-container">
+                <div class="bg-blue-500 project-container">
                     <div class="text-justify text-white">
-                        <div class="bg-pink-600 video-container">
-                            <div class="video-wrapper">
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/gbF2Oj756_8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
+                        <div class="bg-blue-600 img-container" id="img-grid">
+                            <img src="../img/projects/home-server/portainer.webp" alt="portainer dashboard" id="img-child" class="img-select">
+                            <img src="../img/projects/home-server/filerun.webp" alt="filerun home page" id="img-child" class="img-select">
+                            <img src="../img/projects/home-server/npm.webp" alt="nginx proxy manager dashboard" id="img-child" class="img-select">
+                            <img src="../img/projects/home-server/ssh.webp" alt="windows terminal with ssh and 2FA executed" id="img-child" class="img-select">
                         </div>
-                        <div class="bg-pink-600 img-container-sb" id="img-grid">
-                            <img src="../img/projects/ar-cite/banner-3.webp" alt="banner of our app" id="img-child" class="img-select">
-                            <img src="../img/projects/ar-cite/phone-3.webp" alt="screenshot of the map in-app" id="img-child" class="img-select">
-                            <img src="../img/projects/ar-cite/tablet-1.webp" alt="tablet screenshot of the recognition scene in-app" id="img-child" class="img-select">
-                            <img src="../img/projects/ar-cite/phone-5.webp" alt="screenshot of the of the information scene in-app" id="img-child" class="img-select">
-                        </div>
-                        <h2 class="project-title">AR Cité</h2>
+                        <h2 class="project-title">Home Server</h2>
                         <p class="text-wm">
-                            <span class="font-bold">Creators:</span> Augusto Mota Pinheiro, <a href="https://kngfu.com">Kngfu</a> & Dawson College <br>
-                            <span class="font-bold">Start Date:</span> ~ 04/2021 <br>
+                            <span class="font-bold">Creators:</span> Augusto Mota Pinheiro <br>
+                            <span class="font-bold">Start Date:</span> ~ 06/2021 <br>
                             <span class="font-bold">End Date:</span> N/A <br>
-                            <span class="font-bold">Medium & Tools:</span> Unity | Flutter | Miro | Asana | Github <br>
+                            <span class="font-bold">Medium & Tools:</span> <a href="https://ubuntu.com/download/server">Ubuntu Server</a> | <a href="https://github.com/davestephens/ansible-nas">Ansible-Nas</a> | <a href="https://www.docker.com/">Docker</a> | <a href="https://dynv6.com/">DynV6</a> | <a href="https://nginxproxymanager.com/">Nginx Proxy Manager</a><br>
                         </p>
                         <h3 class="font-bold medium-text-wm">Project Summary</h3>
                         <p class="text">
+                            When Google announced that it would be limiting Google Photos usage for non-paying users, I decided to create a home server to host all of my friend's and I favorite game clips. I could also host our Minecraft server on it which was a great bonus! It would be a really cool learning opportunity as well as a great way to have a similar service for lower costs in the long run. <br><br>
 
-                            Back in April of 2021, <a href="https://www.linkedin.com/in/reisa101">Reisa Levine</a>, a teacher in Media Production at Dawson College, reached out to me with an exciting opportunity! She recently received a grant from the federal government to fund her newest project: an augmented reality app that showcased different cultural and historic parts of downtown Montreal. <br><br>
+                            After some research I found out that the easiest way for me to get started would be to use Ansible, an automation framework running on Ubuntu, more specifically Ansible-Nas, an implementation of Ansible specific to "NASes"! I got a cheap workstation from 2010 at a local computer store, installed Ubuntu and Ansible-Nas and got Filerun and Minecraft up and running in a Docker container for each. I also got a few SAMBA shares for the internal network so that I could backup my PC on it weekly as well as a shared internal folder.<br><br>
 
-                            Wanting to create an educational experience above all (both during development and use), with the help of <a href="https://kngfu.com">Kngfu</a>, a Montreal-based creative company, and myself, we've been creating a virtual reality experience that will enable users to explore the city and its history. <br><br>
+                            I had a few key points I wanted to hit with this project, namely having access to it from <span class="font-bold"> outside my home network</span> (for my friends to use) and <span class="font-bold">be easy to maintain</span>. Good news on the latter, Docker was the best solution for me! However, making it secure was a whole new challenge that took me a while to figure out. <br><br>
 
-                            Created in Unity, the app will be available on the Play Store and Apple App Store. <br><br>
+                            I won't go into too much detail for security purposes, but my setup goes a little like this: I got a DDNS from DynV6 to point to my router, forwarded random ports for SSH, Minecraft and NPM, setup 2FA for SSH and used NPM to manage HTTPS traffic to the right places which is just Filerun for now. With everything running in their own Docker container! And to manage all of the containers in a more streamlined way I'm using Portainer!<br><br>
                         </p>
-                        <div class="bg-pink-600 img-container" id="img-grid">
-                            <img src="../img/projects/ar-cite/mockups-1.webp" alt="first mockups of the app" id="img-child" class="img-select">
-                            <img src="../img/projects/ar-cite/mockups-2.webp" alt="more mockups of the app" id="img-child" class="img-select">
-                            <img src="../img/projects/ar-cite/mockups-3.webp" alt="second version mockups of the app" id="img-child" class="img-select">
-                            <img src="../img/projects/ar-cite/mockups-5.webp" alt="second version mockups of the home screen" id="img-child" class="img-select">
-                            <img src="../img/projects/ar-cite/mockups-4.webp" alt="second version mockups of the information screen" id="img-child" class="img-select">
-                            <img src="../img/projects/ar-cite/mockups-6.webp" alt="future version mockup of the home screen" id="img-child" class="img-select">
-                            <img src="../img/projects/ar-cite/ingest-tool-1.webp" alt="the first version of the ingest tool" id="img-child" class="img-select">
-                            <img src="../img/projects/ar-cite/ingest-tool-2.webp" alt="the web version of the ingest tool" id="img-child" class="img-select">
-                            <img src="../img/projects/ar-cite/ingest-tool-3.webp" alt="the latest web version of the ingest tool" id="img-child" class="img-select">
-                            <img src="../img/projects/ar-cite/docs-1.webp" alt="screenshot of the external documentation" id="img-child" class="img-select">
-                        </div>
-                        <h3 class="font-bold medium-text-wm">My Role</h3>
+
+                        <h3 class="font-bold medium-text-wm">Possible Improvements</h3>
                         <p class="text">
-                            Originally, I was tasked with developing the app following the designer's mockups and specifications (examples above). <br><br>
-
-                            I implemented different features like location based audio and semi-interactive map, the entirety of the media UI on recognition, making scene transitions, localization (between English and French), loading of cloud-stored media (photo, video, audio), implementing a cache system, image gallery on information screen, among other things. <br><br>
-
-                            As I gained more confidence, I started having more autonomy in the team and in the development pipeline as well as in chiming in during meetings. Not only did I work on the main app, I also introduced 2 important initiatives: an <span class="font-bold">ingest tool</span> (which started with a Windows only application and became a web based Flutter application) so that non-tech-savvy members of the team could upload media and content and <span class="font-bold">external documentation</span> of every script in the main app and in the ingest tool. (both pictured above) <br><br>
-
-                            Thanks to my now expanded autonomy and confidence, as well as having introduced these extra resources, my role also expanded into a mix of DevOps, Software Development and Product Design. <br><br>
-
-                        </p>
-                        <div class="bg-pink-600 img-container" id="img-grid">
-                            <img src="../img/projects/ar-cite/planning-1.webp" alt="first team planning board" id="img-child" class="img-select">
-                            <img src="../img/projects/ar-cite/planning-2.webp" alt="MVP timeline and features sketch" id="img-child" class="img-select">
-                            <img src="../img/projects/ar-cite/media-testing-3.webp" alt="buggy UI screenshot" id="img-child" class="img-select">
-                            <img src="../img/projects/ar-cite/reco-gps-testing-2.webp" alt="buggy camera feed and debug UI" id="img-child" class="img-select">
-                        </div>
-                        <h3 class="font-bold medium-text-wm">What I Learned & How I Could Be Better</h3>
-                        <p class="text">
-                            Since this is my first time working on a big team project, there was a lot to learn! <br><br>
-
-                            The most important things were:
+                            It was the first time I had ever used Docker and Linux for extended periods of time since I had played with both those tools in the past, but nothing serious. From this, if I had the opportunity of restarting (and I probably will in the future), I would do a couple of things differently:
                         </p>
                         <ul>
-                            <li>Achieving milestones together is much more rewarding than by myself.</li>
-                            <li>However, having everyone in sync and on the same page can be quite the challenge, particularly if everyone has distinct roles.</li>
-                            <li>Expressing your thoughts about an idea or concept should be a priority in communicating.</li>
-                            <li>Finally, even if it's difficult, patient communication (through planning boards) is key to success, specially in larger teams.</li>
+                            <li>
+                                an automation framework like Ansible-Nas is a bit overkill for my purposes.
+                            </li>
+                            <li>
+                                it would've been easier to run everything in Docker containers on a clean installation of Ubuntu Server.
+                            </li>
+                            <li>
+                                making regular backups of my configuration files as well as my data is a great way to avoid panicked afternoons, thinking I lost everything while in reality my drive wasn't automatically mounted.
+                            </li>
                         </ul>
-                        <br>
                         <p class="text">
-                            Aside from involuntarily creating spectacular bugs sometimes (as pictured above), there are also things that I would've done differently, like focusing less on the tiny little details and more on the big picture. It's mostly for myself, so that I can have healthier work/life balance.
-                        </p>
-                        <p class="text-wm">
-                            And that's it for now :) I'll keep posting updates as the project progresses, until then!
+                            That being said, I'm very proud of what I achieved and will definitely be working on improving it in the future :)
                         </p>
                     </div>
                 </div>
